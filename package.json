@@ -15,10 +15,18 @@
   "type": "commonjs",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "node --watch app.js",
+    "seed:local": "node db/populatedb.js postgresql://${USER}:${PSD}@${HOST}:${DB_PORT}/${DB}",
+    "seed:prod": "node db/populatedb.js <YOUR_PROD_CONNECTION_STRING>"
   },
   "dependencies": {
+    "dotenv": "^17.2.2",
     "ejs": "^3.1.10",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "express-validator": "^7.2.1",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "dotenv-cli": "^10.0.0"
   }
 }

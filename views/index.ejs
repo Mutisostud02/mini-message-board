@@ -8,10 +8,10 @@
 
         <% messages.forEach(message => { %>
             <div class="messages">
-                <h3><%= message.user %></h3>
-                <p><%= message.text %></p>
-                <p><%= message.added %></p>
-                <button><a href="<%= message.id %>">view</a></button>
+                <h3><%= message.sendername %></h3>
+                <p><%= message.message %></p>
+                <p><%= message.timesent %></p>
+                <button><a href="/messages/<%= message.id %>">view</a></button>
             </div>
         <% }); %>
         <button><a href="<%= href %>">New Message</a></button>

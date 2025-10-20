@@ -1,9 +1,6 @@
 const express = require('express')
+const { newMessage } = require('../controllers/indexController')
 const router = express.Router()
 
-
-router.get('/', (req, res) => {
-    res.render("form", {title: "Write new message: "})
-})
-
+router.get('/', newMessage)
 module.exports = router;

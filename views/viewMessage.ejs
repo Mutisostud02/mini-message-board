@@ -7,6 +7,9 @@
                 <h3><%= user %></h3>
                 <p><%= text %></p>
                 <p><%= added %></p>
+                <form action="/messages/delete/<%= id%>" method="POST">
+                    <button type="submit">delete</button>
+                </form>
             </div>
     </body>
 </html>
