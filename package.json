@@ -15,7 +15,7 @@
   "type": "commonjs",
   "main": "app.js",
   "scripts": {
-    "watch": "node --watch app.js",
+    "start": "node --watch app.js",
     "seed:local": "node db/populatedb.js postgresql://${USER}:${PSD}@${HOST}:${DB_PORT}/${DB}",
     "seed:prod": "node db/populatedb.js <YOUR_PROD_CONNECTION_STRING>"
   },
