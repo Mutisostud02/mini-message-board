@@ -19,12 +19,17 @@ VALUES
 
 async function main() {
   console.log("seeding...");
-  const connectionString = process.argv[2];
+  const connectionString = process.env.DATABASE_URL;
   if(!connectionString) {
     console.error("Error: Missing connection string");
     process.exit(1);
   }
-  const client = new Client({connectionString});
+  const client = new Client({
+    connectionString,
+    ssl: {
+      rejectUnauthorized: false, // Ignore certificate verification (necessary for Koyeb's managed service)
+    },
+  });
   try {
   await client.connect();
   await client.query(SQL);
