@@ -1,9 +1,9 @@
 const { Pool } = require('pg');
 const pool = new Pool({
-    host: process.env.HOST,
-    user: process.env.USER,
-    password: process.env.PSD,
-    database: process.env.DB,
-    port: process.env.DB_PORT
-})
+  connectionString: process.env.DATABASE_URL,  // Use 'connectionString' to pass the URL
+  ssl: {
+    rejectUnauthorized: false,  // This is required for cloud PostgreSQL
+  },
+});
+
 module.exports = pool;
